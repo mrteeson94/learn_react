@@ -1,0 +1,12 @@
+{
+  "name": "learn_react",
+  "version": "1.0.0",
+  "description": "Just to learn",
+  "main": "react.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node react.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
