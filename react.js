@@ -1,5 +1,5 @@
 // ES6 Basics
-console.log("Hello")
+console.log("Hello");
 //1. arrow functions
 // const DoSomething = () => {
 //     return <div><p>Hello World</p></div>;
@@ -41,19 +41,45 @@ console.log("Hello")
 
   //6 Async-Await, Promises, fetch
 //promise - an object that invokes 2 functions resolve() and reject() which are pretty much try catch.
-var events = new Promise((resolve,reject) => {
-   let name = "Rock"
-   if (name == "James"){
-      resolve(name);
+// var events = new Promise((resolve,reject) => {
+//    let name = "Rock"
+//    if (name == "James"){
+//       resolve(name);
+//    }
+//    else{
+//       reject(`name not found,${name} was passed from API`);
+//    }
+// });
+// events.then((name) => {
+//    console.log(name);
+// }).catch((err) => {
+//    console.log(err);
+// }).finally(() => {
+//    console.log("PROMISE FINISH EXECUTING!")
+// });
+
+//API example
+const axios = require('axios');
+
+const requestData = {
+   method: 'GET',
+   url: 'https://brianiswu-cat-facts-v1.p.rapidapi.com/facts',
+   headers: {
+      'X-RapidAPI-Key': '02737cd706msh4fac2dbf5aa98b2p1c93fcjsn3229377c4340',
+      'X-RapidAPI-Host': 'brianiswu-cat-facts-v1.p.rapidapi.com'
    }
-   else{
-      reject(`name not found,${name} was passed from API`);
+};
+
+const FetchData = async () => {
+   try {
+      const response =await axios.request(requestData);
+      const jokes = response.data;
+      jokes.forEach((joke,index) => {
+         console.log(`${index + 1}: ${joke.text}`);
+      });
+   } catch (error) {
+      console.log(error);
    }
-});
-events.then((name) => {
-   console.log(name);
-}).catch((err) => {
-   console.log(err);
-}).finally(() => {
-   console.log("PROMISE FINISH EXECUTING!")
-});
+};
+
+FetchData();
