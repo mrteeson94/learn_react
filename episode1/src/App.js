@@ -2,7 +2,8 @@ import './App.css';
 
 function App() {
   return(
-    <div className='App'>Hello World</div>
+    <div className='App'>
+    </div>
   );
 }
 
@@ -26,3 +27,14 @@ export default App;
 //     <p>{props.company}</p>
 //   </div>)
 // };
+
+//2. Ternary Operators in react
+// function App() {
+//   const age = 17;
+//   const isGreen = true;
+//   return(
+//     <div className='App'>{age >= 18 ? <h2>Over age</h2> : <h2>Under age</h2>}
+//         <h1 style={{color: isGreen ? "green" : "red"}}>COLOR TEXT</h1>
+//     </div>
+//   );
+// }
