@@ -49,3 +49,17 @@
 //     );
 //   }
 
+//4. useState textbox example showing live input results
+// function App() {
+//     const [inputValues, setInputValues] = useState("");
+    
+//       const handleInputValues = (event) => {
+//         setInputValues((event.target.value))
+//       };
+//       return(
+//         <div className='App'>
+//           <input type="text" onChange={handleInputValues}/>
+//           {inputValues}
+//         </div>
+//       );
+//     }
